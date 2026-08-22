@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -22,11 +23,31 @@
 
         <button type="button" @click="addBook">Agregar Libro</button>
     </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Autor</th>
+                <th>Ventas</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="book in books" :key="book.titulo">
+                <td>{{ book.titulo }}</td>
+                <td>{{ book.autor }}</td>
+                <td>{{ book.ventas }}</td>
+                <td>
+                    <button type="button" @click="editBook(book)">Editar</button>
+                    <button type="button" @click="deleteBook(book)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
 
 
 
 </div>
 
-
+<script src="app.js"></script>.
 </body>
 </html>
